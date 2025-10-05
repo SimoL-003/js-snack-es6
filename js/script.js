@@ -3,7 +3,7 @@
 const raceBikes = [
     {
         name: "Specialized Tarmac SL8",
-        weight: 6.6
+        weight: 6.1
     },
     {
         name: "Cannondale SuperSix EVO",
@@ -19,18 +19,16 @@ const raceBikes = [
     }
 ];
 
-let result;
+let lighterBike = raceBikes[0];
 
 for (let i = 0; i < raceBikes.length - 1; i++) {
-    let curValue = raceBikes[i].weight;
-    let nextValue = raceBikes[i + 1].weight;
-    result = raceBikes[i].name;
-    if (curValue > nextValue) {
-        result = raceBikes[i + 1].name;
+    let curBike = raceBikes[i];
+    if (curBike.weight < lighterBike.weight) {
+        lighterBike = curBike;
     }
 }
 
-console.log(result);
+console.log(lighterBike.name);
 
 // --------------- Snack 2 ---------------
 
@@ -68,8 +66,8 @@ for (let i = 0; i < footballTeams.length; i++) {
 console.log(newArray);
 
 function generateRandomNumber(min, max) {
-    let result = Math.floor(Math.random() * (max - min + 1)) + min;
-    return result
+    let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    return randomNumber;
 }
 
 // --------------- Snack 3 (bonus) ---------------
@@ -91,7 +89,7 @@ function getRangeFromArray(array, a, b) {
     const arrayFiltered = [];
     if (a <= b) {
         for (let i = a; i <= b; i++) {
-            curValue = array[i];
+            let curValue = array[i];
             arrayFiltered.push(curValue);
         } return arrayFiltered;
     } else {
@@ -111,6 +109,7 @@ const array2 = ["a", "b", "c"];
  * 
  * @param {array} array1 
  * @param {array} array2
+ * @returns {array}
  * 
  * Se la lunghezza del primo array è maggiore di quella del secondo,
  *      per ogni indice del primo array
@@ -124,7 +123,7 @@ const array2 = ["a", "b", "c"];
 
 function mergeArrays(array1, array2) {
     const mergedArray = [];
-    if (array1.length > array2.length) {
+    if (array1.length >= array2.length) {
         for (let i = 0; i < array1.length; i++) {
             mergedArray.push(array1[i]);
             if (array2[i])
