@@ -15,13 +15,13 @@ const raceBikes = [
     },
     {
         name: "Pinarello Dogma F",
-        weight: 6.9
+        weight: 6.0
     }
 ];
 
 let lighterBike = raceBikes[0];
 
-for (let i = 0; i < raceBikes.length - 1; i++) {
+for (let i = 0; i < raceBikes.length; i++) {
     let curBike = raceBikes[i];
     if (curBike.weight < lighterBike.weight) {
         lighterBike = curBike;
