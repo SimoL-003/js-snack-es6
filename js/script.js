@@ -21,7 +21,7 @@ const raceBikes = [
 
 let lighterBike = raceBikes[0];
 
-for (let i = 0; i < raceBikes.length; i++) {
+for (let i = 1; i < raceBikes.length; i++) {
     let curBike = raceBikes[i];
     if (curBike.weight < lighterBike.weight) {
         lighterBike = curBike;
@@ -58,9 +58,10 @@ const footballTeams = [
 const newArray = [];
 
 for (let i = 0; i < footballTeams.length; i++) {
-    footballTeams[i].points = generateRandomNumber(0, 100);
-    footballTeams[i].fouls = generateRandomNumber(0, 10);
-    newArray.push(`${footballTeams[i].name}: ${footballTeams[i].fouls} fouls`);
+    let curTeam = footballTeams[i];
+    curTeam.points = generateRandomNumber(0, 100);
+    curTeam.fouls = generateRandomNumber(0, 10);
+    newArray.push(`${curTeam.name}: ${curTeam.fouls} fouls`);
 }
 
 console.log(newArray);
